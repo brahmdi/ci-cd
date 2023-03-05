@@ -32,9 +32,11 @@ jobs:
       run: mvn clean install
     - name: Test
       run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
-    - name: Notify slack
+    - name: Notification Slack
+      uses: rtCamp/action-slack-notify@v2
       env:
-        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-      uses: pullreminders/slack-action@master
-      with:
-        args: '{\"channel\":\"C04SF3JPCAW\",\"text\":\"Hello world\"}'
+        SLACK_CHANNEL: ci
+        SLACK_TITLE: Post Title
+        SLACK_USERNAME: BotCI
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+        SLACK_MESSAGE: "you push a new code."
