@@ -28,11 +28,11 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven
-      run: mvn --batch-mode -DskipTests package
+      run: mvn clean install
     - name: Test
-      run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
+      run: mvn --batch-mode -Maven.test.failure.ignore=true test
     - name: Report
-      uses: dorny/test-reporter@v1
+      uses: dory/test-reporter@v1
       if: always()
       with:
           name: Maven Tests
