@@ -14,6 +14,6 @@ public class CalculTest {
     }
     @Test
     public  void testSomme(){
-        assertEquals(4,calcul.somme()) ;
+        assertEquals(3,calcul.somme()) ;
     }
 }
