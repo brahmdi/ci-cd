@@ -39,4 +39,4 @@ jobs:
         SLACK_TITLE: Post Title
         SLACK_USERNAME: BotCI
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-        SLACK_MESSAGE: "you push a new code."
+        SLACK_MESSAGE: "you push a new things."
