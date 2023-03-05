@@ -32,10 +32,9 @@ jobs:
       run: mvn clean install
     - name: Test
       run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
-    - name: Slack Notification
-      uses: act10ns/slack@v1
+    - name: Notify slack
+      env:
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      uses: pullreminders/slack-action@master
       with:
-        status: ${{ job.status }}
-        channel: '#cicdg'
-        message: Deployed {{ env.GITHUB_REF_NAME }} branch Successfully
-      if: always()
+        args: '{\"channel\":\"C04SF3JPCAW\",\"text\":\"Hello world\"}'
