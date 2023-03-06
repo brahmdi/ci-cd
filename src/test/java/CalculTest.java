@@ -8,10 +8,6 @@ public class CalculTest {
 
     Calcul calcul ;
 
-    public CalculTest(Calcul calcul) {
-        super();
-    }
-
     @BeforeEach
     void setup(){
         calcul = new Calcul(1,2) ;
