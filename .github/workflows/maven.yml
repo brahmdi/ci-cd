@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    timeout-minutes: 20
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 19
